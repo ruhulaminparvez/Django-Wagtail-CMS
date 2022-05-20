@@ -7,9 +7,14 @@ class HomePage(Page):
     """Home Page Model"""
 
     templates = "home/home_page.html"
+    max_count = 1
 
     banner_title = models.CharField(max_length=255, blank=False, null=True)
 
     content_panels = Page.content_panels + [
         FieldPanel("banner_title")
     ]
+
+    class Meta:
+        verbose_name = "Home Page"
+        verbose_name_plural = "Home Pages"
